@@ -1,0 +1,22 @@
+#!/bin/bash -ex
+
+mkdir -p platforms
+
+mkdir -p repos
+if [ ! -d repos/install-cluster ]; then
+    git clone https://github.com/jaydoane/install-cluster.git repos/install-cluster
+fi
+if [ ! -d repos/testy ]; then
+    git clone https://github.com/cloudant/testy.git repos/testy
+fi
+
+mkdir -p venvs
+if [ ! -d venvs/testy ]; then
+    virtualenv venvs/testy
+fi
+
+. venvs/testy/bin/activate
+pip install --upgrade pip
+pip install ansible
+pip install s3cmd
+pip install -r repos/testy/requirements.txt

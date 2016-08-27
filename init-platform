@@ -1,0 +1,8 @@
+#!/bin/bash -ex
+
+platform=$1
+mkdir -p platforms/$platform
+rsync -aPW --exclude .vagrant --exclude installers/*.tar.gz \
+      repos/install-cluster/* platforms/$platform/
+rsync -aPW repos/testy platforms/$platform/
+cp scripts/* platforms/$platform/
