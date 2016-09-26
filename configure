@@ -4,10 +4,10 @@ mkdir -p platforms
 
 mkdir -p repos
 if [ ! -d repos/install-cluster ]; then
-    git clone https://github.com/jaydoane/install-cluster.git repos/install-cluster
+    git clone git@github.com:jaydoane/install-cluster.git repos/install-cluster
 fi
 if [ ! -d repos/testy ]; then
-    git clone https://github.com/cloudant/testy.git repos/testy
+    git clone git@github.com:cloudant/testy.git repos/testy
 fi
 
 mkdir -p venvs
