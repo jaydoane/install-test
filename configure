@@ -17,6 +17,6 @@ fi
 
 . venvs/testy/bin/activate
 pip install --upgrade pip
-pip install ansible
+pip install ansible==2.1.1.0
 pip install s3cmd
 pip install -r repos/testy/requirements.txt
