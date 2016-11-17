@@ -22,4 +22,4 @@ pip install s3cmd
 pip install -r repos/testy/requirements.txt
 
 target=venvs/testy/lib/python2.7/site-packages/ansible/plugins/connection/ssh.py
-sed -i.bak -e 's/"Failed to connect to the host via ssh."/"Failed to connect to the host via ssh: %s" % to_native(return_tuple[2])/' $target
+sed -i.bak -e 's/"Failed to connect to the host via ssh."/"Failed to connect to the host via ssh: %s" % to_str(return_tuple[2])/' $target
